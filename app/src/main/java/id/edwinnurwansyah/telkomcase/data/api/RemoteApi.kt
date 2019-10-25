@@ -15,5 +15,5 @@ interface RemoteApi {
 
 
     @GET("item/{id}")
-    fun getComment(@Path("id") id:String?="") : Observable<List<CommentSourceData>>
+    fun getComment(@Path("id") id:String?="") : Observable<CommentSourceData>
 }

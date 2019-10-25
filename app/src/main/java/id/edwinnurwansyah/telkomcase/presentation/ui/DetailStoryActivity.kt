@@ -59,7 +59,7 @@ class DetailStoryActivity : AppCompatActivity() {
             finish()
 
         }
-        viewModel.getCommentStory(model.id)
+        viewModel.getCommentStory(model.comment)
         listComment = mutableListOf()
         commentAdapter = CommentAdapter(listComment,this)
         rvComment.apply {

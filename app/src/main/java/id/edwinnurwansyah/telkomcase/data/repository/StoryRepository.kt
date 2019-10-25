@@ -6,7 +6,7 @@ import id.edwinnurwansyah.telkomcase.domain.repositories.StoryRepository
 import io.reactivex.Observable
 
 class StoryRepository(private val  remote: StoryRemote) : StoryRepository {
-    override fun getComment(id: String?): Observable<List<CommentSourceEntity>> {
+    override fun getComment(id: String?): Observable<CommentSourceEntity> {
         return remote.getDataComment(id)
     }
 

@@ -7,14 +7,14 @@ import id.edwinnurwansyah.telkomcase.domain.repositories.StoryRepository
 import io.reactivex.Observable
 import javax.inject.Inject
 
-class GetCommentStoryUseCase@Inject constructor(transformer: ObservableRxTransformer<List<CommentSourceEntity>>,
+class GetCommentStoryUseCase@Inject constructor(transformer: ObservableRxTransformer<CommentSourceEntity>,
                                                 private val  repository: StoryRepository
-) : BaseObservableUseCase<List<CommentSourceEntity>>(transformer) {
-    override fun createObservable(id: String?): Observable<List<CommentSourceEntity>> {
+) : BaseObservableUseCase<CommentSourceEntity>(transformer) {
+    override fun createObservable(id: String?): Observable<CommentSourceEntity> {
         return repository.getComment(id)
     }
 
-    fun getComment(id: String?) : Observable<List<CommentSourceEntity>>{
+    fun getComment(id: String?) : Observable<CommentSourceEntity>{
         return single(id)
     }
 }

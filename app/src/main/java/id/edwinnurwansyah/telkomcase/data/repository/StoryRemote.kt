@@ -12,8 +12,8 @@ class StoryRemote(private val api:RemoteApi) : StoryDataStore {
     private val storyMapper = StoryDataEntityMapper()
     private val commentMapper = CommentDataEntityMapper()
 
-    override fun getDataComment(id: String?): Observable<List<CommentSourceEntity>> {
-        return api.getComment(id).map { commentMapper.mapListToEntity(it) }
+    override fun getDataComment(id: String?): Observable<CommentSourceEntity> {
+        return api.getComment(id).map { commentMapper.mapItemToEntity(it) }
     }
 
 

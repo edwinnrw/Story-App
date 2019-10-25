@@ -7,6 +7,6 @@ import io.reactivex.Observable
 interface StoryDataStore {
     fun getIdTopStory() : Observable<List<String>>
     fun getDataStory(id:String?) : Observable<StorySourceEntity>
-    fun getDataComment(id:String?) : Observable<List<CommentSourceEntity>>
+    fun getDataComment(id:String?) : Observable<CommentSourceEntity>
 
 }

@@ -12,11 +12,8 @@ data class CommentSourceData(
 )
 class CommentDataEntityMapper{
 
-    fun mapListToEntity(commentList:List<CommentSourceData>) : List<CommentSourceEntity> =
-        commentList.map { mapItemToEntity(it) }
 
-
-    private  fun mapItemToEntity(item:CommentSourceData) : CommentSourceEntity =
+    fun mapItemToEntity(item:CommentSourceData) : CommentSourceEntity =
         CommentSourceEntity(
             id = item.id,
             createdBy = item.createdBy,
