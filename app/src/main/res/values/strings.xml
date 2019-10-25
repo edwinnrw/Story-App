@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TelkomCase</string>
+    <string name="topStory">Top Story</string>
+    <string name="myFavorite">My Favorite</string>
+    <string name="comments">Comments</string>
+    <string name="storyDetail">Story Detail</string>
+</resources>
