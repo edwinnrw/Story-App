@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:text="@string/storyDetail"
             android:textColor="@android:color/black"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -34,7 +34,7 @@
         android:layout_marginTop="16dp"
         android:gravity="center"
         android:textColor="@android:color/black"
-        android:textSize="20dp"
+        android:textSize="20sp"
 
         app:layout_constraintEnd_toStartOf="@+id/ivFavorite"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textColor="@android:color/black"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivFavorite"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:drawableLeft="@drawable/ic_thumb"
+        android:drawableEnd="@drawable/ic_thumb"
         android:gravity="center"
         app:layout_constraintEnd_toStartOf="@+id/tvComment"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +67,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivFavorite"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCreatedBy" />
 
@@ -78,7 +78,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:drawableLeft="@drawable/ic_comment"
+        android:drawableEnd="@drawable/ic_comment"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvScore"
@@ -90,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:textSize="22dp"
+        android:textSize="22sp"
         android:text="@string/comments"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvScore" />
@@ -103,20 +103,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         android:src="@drawable/ic_favorite" />
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvCommentLabel">
+
         <ProgressBar
             android:id="@+id/pbComment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"/>
+            android:layout_centerHorizontal="true" />
+
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
             android:id="@+id/rvComment"
-            android:visibility="gone"
-            android:layout_height="match_parent"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

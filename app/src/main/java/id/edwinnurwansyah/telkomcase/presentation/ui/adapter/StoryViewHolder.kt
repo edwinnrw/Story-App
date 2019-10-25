@@ -1,9 +1,7 @@
 package id.edwinnurwansyah.telkomcase.presentation.ui.adapter
 
 import android.content.Context
-import android.graphics.drawable.GradientDrawable
 import android.view.View
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import id.edwinnurwansyah.telkomcase.presentation.entities.Story
 import kotlinx.android.synthetic.main.item_story.view.*

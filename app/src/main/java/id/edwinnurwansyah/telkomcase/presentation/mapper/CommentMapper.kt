@@ -8,10 +8,10 @@ class CommentMapper : Mapper<CommentSourceEntity, Comment>() {
 
 
     override fun mapFrom(item: CommentSourceEntity): Comment =  Comment(
-        id = item.id,
-        text = item.text,
-        createdBy = item.createdBy,
-        time = item.time
+        id = item.id?:"",
+        text = item.text?:"",
+        createdBy = item.createdBy?:"",
+        time = item.time?:0
 
     )
 

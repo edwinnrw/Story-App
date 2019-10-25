@@ -4,10 +4,10 @@ import com.google.gson.annotations.SerializedName
 import id.edwinnurwansyah.telkomcase.domain.entities.CommentSourceEntity
 
 data class CommentSourceData(
-    @SerializedName("id") val id:String,
-    @SerializedName("text") val text:String,
-    @SerializedName("by") val createdBy:String,
-    @SerializedName("time") val time:Long
+    @SerializedName("id") var id:String?="",
+    @SerializedName("text") var text:String?="",
+    @SerializedName("by") var createdBy:String?="",
+    @SerializedName("time") var time:Long?=0
 
 )
 class CommentDataEntityMapper{

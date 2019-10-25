@@ -15,6 +15,7 @@ import id.edwinnurwansyah.telkomcase.presentation.entities.Comment
 import id.edwinnurwansyah.telkomcase.presentation.entities.Status
 import id.edwinnurwansyah.telkomcase.presentation.entities.Story
 import id.edwinnurwansyah.telkomcase.presentation.ui.adapter.CommentAdapter
+import id.edwinnurwansyah.telkomcase.presentation.util.changeFormatDate
 import id.edwinnurwansyah.telkomcase.presentation.util.makeGone
 import id.edwinnurwansyah.telkomcase.presentation.util.makeVisible
 import id.edwinnurwansyah.telkomcase.presentation.viewModel.StoryViewModel
@@ -24,7 +25,7 @@ import javax.inject.Inject
 
 class DetailStoryActivity : AppCompatActivity() {
 
-    lateinit var model:Story
+    private lateinit var model:Story
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
@@ -42,7 +43,7 @@ class DetailStoryActivity : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(StoryViewModel::class.java)
 
         if (savedInstanceState?.getSerializable("data") !=null){
-            model = savedInstanceState?.getSerializable("data") as Story
+            model = savedInstanceState.getSerializable("data") as Story
         }else{
             model = intent.getSerializableExtra("data") as Story
 
@@ -51,9 +52,9 @@ class DetailStoryActivity : AppCompatActivity() {
         tvComment.text = model.comment.size.toString()
         tvScore.text = model.score
         tvCreatedBy.text = "Created By: "+ model.created_by
-
+        tvTime.text = changeFormatDate(model.time)
         ivFavorite.setOnClickListener {
-            var intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this,MainActivity::class.java)
             intent.putExtra("data",model)
             setResult(Activity.RESULT_OK, intent)
             finish()
